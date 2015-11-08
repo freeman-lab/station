@@ -6,7 +6,7 @@ import station
 setup(
     name='station',
     version=station.__version__,
-    description='context manager computational engines',
+    description='simple context manager for computational engines',
     author='freeman-lab',
     author_email='the.freeman.lab@gmail.com',
     packages=['station'],

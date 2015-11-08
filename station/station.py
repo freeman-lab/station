@@ -1,5 +1,4 @@
 from collections import defaultdict
-import muffle
 
 _globals = defaultdict(lambda: None)
 _globals.update({'engine': None, 'mode': 'local'})
@@ -52,6 +51,7 @@ class setup(object):
                 new['mode'] = 'spark'
             else:
                 print("Starting spark...")
+                import muffle
                 with muffle.on():
                     opts = {} if not opts else opts
                     sc = SparkContext(**opts)
