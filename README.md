@@ -36,12 +36,7 @@ station.engine()
 get the current mode with
 ```python
 station.mode()
->> 'spark'
-```
-
-```python
-station.mode()
->> 'local'
+>> 'spark' | 'local'
 ```
 
 and shut down with
