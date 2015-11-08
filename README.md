@@ -1,6 +1,6 @@
 # station
 
-Data analysis typically requires working across different scales, with different computational engines. `station` provides a simple context manager to make it easier to write code across different levels. Currently supports `spark` and `local` modes. Hope to add support for `dask` and `distributed` soon.
+Simple context manager to make it easier to write code targeting different computational engines. Currently supports `spark` and `local` modes, support for `dask` and `distributed` coming soon.
 
 ### install
 
