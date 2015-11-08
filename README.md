@@ -10,24 +10,24 @@ Currently supports `spark` and `local` modes. Hope to add support for `dask` and
 pip install station
 ```
 
-### create a 
+### initializing
 
-with an existing spark context
+if you have an existing spark context as `sc`
 ```
 station.setup(sc)
 ```
 
-create a new spark context
+or create a new spark context
 ```
 station.setup(spark=True, opts={'master': 'local'})
 ```
 
-create a local environment
+or create a local environment
 ```
 station.setup()
 ```
 
-you can also use in a `with`, great for unit testing!
+you can also use in a `with` for tight control (e.g. in unit testing)
 ```
 with station.setup(spark=True):
   # do spark stuff
@@ -39,7 +39,8 @@ with station.setup(spark=True):
   # do more spark stuff
 ```
 
-###
+### methods
+
 once created you can access
 ```
 station.agent()
