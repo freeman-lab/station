@@ -10,12 +10,12 @@ pip install station
 
 ### initializing
 
-if you have an existing spark context as `sc`
+if you have an existing spark context you can use it
 ```python
 station.setup(sc)
 ```
 
-or create a new spark context
+or create a new spark context with options
 ```python
 station.setup(spark=True, opts={'master': 'local'})
 ```
@@ -30,11 +30,13 @@ station.setup()
 once created you can get the context object provided by the backend with
 ```python
 station.engine()
+>> <pyspark.context.SparkContext at 0x105f31cd0>
 ```
 
 get the current mode with
 ```python
 station.mode()
+>> 'spark'
 ```
 
 and shut down with
