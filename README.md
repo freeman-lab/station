@@ -41,7 +41,7 @@ with station.setup(spark=True):
 
 once created you can get the context object provided by the backend with
 ```python
-station.agent()
+station.engine()
 ```
 
 get the current mode with
