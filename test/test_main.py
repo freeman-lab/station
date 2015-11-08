@@ -23,3 +23,9 @@ def test_spark_context():
 		n = station.engine().parallelize([1,2,3]).count()
 	assert mode == 'spark'
 	assert n == 3
+
+def test_spark_close():
+	station.setup(spark=True)
+	assert station.mode() == 'spark'
+	station.close()
+	assert station.mode() == 'local'
