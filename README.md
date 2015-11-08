@@ -30,7 +30,7 @@ station.setup()
 once created you can get the context object provided by the backend
 ```python
 station.engine()
->> <pyspark.context.SparkContext at 0x105f31cd0> | None
+>> <pyspark.context.SparkContext> | None
 ```
 
 get the current mode with
