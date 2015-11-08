@@ -41,18 +41,17 @@ with station.setup(spark=True):
 
 ### methods
 
-once created you can access
+once created you can get the context object provided by the backend with
 ```python
 station.agent()
 ```
-to get whatever context / engine / object provided by the backend
 
-to get the current mode
+get the current mode with
 ```python
 station.mode()
 ```
 
-to shut down
+and shut down with
 ```python
 station.close()
 ```
