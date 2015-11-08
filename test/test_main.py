@@ -16,6 +16,23 @@ def test_spark():
 	assert station.mode() == 'spark'
 	assert isinstance(station.engine(), SparkContext)
 	assert station.engine().parallelize([1,2,3]).count() == 3
+	station.close()
+
+def test_spark_existing():
+	sc = SparkContext()
+	station.setup(sc)
+	assert station.mode() == 'spark'
+	assert isinstance(station.engine(), SparkContext)
+	assert station.engine().parallelize([1,2,3]).count() == 3
+	station.close()
+
+def test_spark_opts():
+	station.setup(spark=True, opts={'master': 'local'})
+	assert station.mode() == 'spark'
+	assert isinstance(station.engine(), SparkContext)
+	assert station.engine().master == 'local'
+	assert station.engine().parallelize([1,2,3]).count() == 3
+	station.close()
 
 def test_spark_context():
 	with station.setup(spark=True):
@@ -23,6 +40,7 @@ def test_spark_context():
 		n = station.engine().parallelize([1,2,3]).count()
 	assert mode == 'spark'
 	assert n == 3
+	assert station.mode() == 'local'
 
 def test_spark_close():
 	station.setup(spark=True)

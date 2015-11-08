@@ -53,7 +53,8 @@ class setup(object):
             else:
                 print("Starting spark...")
                 with muffle.on():
-                    sc = SparkContext(opts)
+                    opts = {} if not opts else opts
+                    sc = SparkContext(**opts)
                 new['engine'] = sc
                 new['mode'] = 'spark'
                 print("Spark initialized")
