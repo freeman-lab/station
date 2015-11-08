@@ -27,22 +27,19 @@ station.setup()
 
 ### methods
 
-once created you can get the context object provided by the backend with
+once created you can get the context object provided by the backend
 ```python
-station.setup(spark=True)
 station.engine()
 >> <pyspark.context.SparkContext at 0x105f31cd0>
 ```
 
 get the current mode with
 ```python
-station.setup(spark=True)
 station.mode()
 >> 'spark'
 ```
 
 ```python
-station.setup()
 station.mode()
 >> 'local'
 ```
