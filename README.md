@@ -25,18 +25,6 @@ or create a local environment
 station.setup()
 ```
 
-you can also use in a `with` for tight control (e.g. in unit testing)
-```python
-with station.setup(spark=True):
-  # do spark stuff
-  
-with station.setup():
-  # do local stuff
-
-with station.setup(spark=True):
-  # do more spark stuff
-```
-
 ### methods
 
 once created you can get the context object provided by the backend with
@@ -52,4 +40,18 @@ station.mode()
 and shut down with
 ```python
 station.close()
+```
+
+### more
+
+you can use in a `with` for tight context control e.g. for unit testing or benchmarking
+```python
+with station.setup(spark=True):
+  # do spark stuff
+  
+with station.setup():
+  # do local stuff
+
+with station.setup(spark=True):
+  # do more spark stuff
 ```
