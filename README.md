@@ -1,6 +1,6 @@
 # station
 
-Simple context manager to make it easier to write code targeting different computational engines. Currently supports `spark` and `local` modes, support for `dask` and `distributed` coming soon.
+Simple context manager to make it easier to write code targeting different computational engines. Currently supports `spark` and `local` modes, support for `dask` and `distributed` coming soon. Credit to Matt Rocklin (@mrocklin) for providing nice examples of custom context managers.
 
 ### install
 
