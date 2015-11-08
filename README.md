@@ -65,3 +65,4 @@ with station.setup():
 with station.setup(spark=True):
   # do more spark stuff
 ```
+any engines created inside a `with` will be shut down upon exit, so any results requiring the engine should be collected locally
