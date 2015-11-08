@@ -13,22 +13,22 @@ pip install station
 ### initializing
 
 if you have an existing spark context as `sc`
-```
+```python
 station.setup(sc)
 ```
 
 or create a new spark context
-```
+```python
 station.setup(spark=True, opts={'master': 'local'})
 ```
 
 or create a local environment
-```
+```python
 station.setup()
 ```
 
 you can also use in a `with` for tight control (e.g. in unit testing)
-```
+```python
 with station.setup(spark=True):
   # do spark stuff
   
@@ -42,17 +42,17 @@ with station.setup(spark=True):
 ### methods
 
 once created you can access
-```
+```python
 station.agent()
 ```
 to get whatever context / engine / object provided by the backend
 
 to get the current mode
-```
+```python
 station.mode()
 ```
 
 to shut down
-```
+```python
 station.close()
 ```
