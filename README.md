@@ -20,7 +20,7 @@ or create a new spark context with options
 station.setup(spark=True, opts={'master': 'local'})
 ```
 
-or create a local environment
+or use the default local environment
 ```python
 station.setup()
 ```
@@ -29,14 +29,22 @@ station.setup()
 
 once created you can get the context object provided by the backend with
 ```python
+station.setup(spark=True)
 station.engine()
 >> <pyspark.context.SparkContext at 0x105f31cd0>
 ```
 
 get the current mode with
 ```python
+station.setup(spark=True)
 station.mode()
 >> 'spark'
+```
+
+```python
+station.setup()
+station.mode()
+>> 'local'
 ```
 
 and shut down with
