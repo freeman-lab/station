@@ -81,7 +81,7 @@ def stop():
     if _globals['mode'] == 'spark':
         _globals['engine'].stop()
 
-def clear():
+def close():
     stop()
     _globals.clear()
     _globals.update({'engine': None, 'mode': 'local', 'credentials': None})
