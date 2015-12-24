@@ -12,17 +12,17 @@ pip install station
 
 if you have an existing spark context you can use it
 ```python
-station.setup(sc)
+station.start(sc)
 ```
 
 or create a new spark context with options
 ```python
-station.setup(spark=True, opts={'master': 'local'})
+station.start(spark=True, opts={'master': 'local'})
 ```
 
 or use the default local environment
 ```python
-station.setup()
+station.start()
 ```
 
 ### methods
@@ -36,25 +36,25 @@ station.engine()
 get the current mode with
 ```python
 station.mode()
->> 'spark' | 'local'
+>> 'local' | 'spark'
 ```
 
-and shut down with
+and stop with
 ```python
-station.close()
+station.stop()
 ```
 
 ### more
 
 you can use in a `with` for tight context control e.g. for unit testing or benchmarking
 ```python
-with station.setup(spark=True):
+with station.start(spark=True):
   # do spark stuff
   
-with station.setup():
+with station.start():
   # do local stuff
 
-with station.setup(spark=True):
+with station.start(spark=True):
   # do more spark stuff
 ```
-any engines created inside a `with` will be shut down upon exit, so any results requiring the engine should be collected locally
+any engines created inside a `with` will be shut down upon exit, so results requiring the engine should be collected locally

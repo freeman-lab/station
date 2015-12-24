@@ -2,40 +2,41 @@ import station
 from pyspark import SparkContext
 
 def test_local():
-	station.setup()
+	station.start()
 	assert station.engine() is None
 	assert station.mode() == 'local'
 
 def test_local_context():
-	with station.setup():
+	with station.start():
 		mode = station.mode()
 	assert mode == 'local'
 
 def test_spark():
-	station.setup(spark=True)
+	station.start(spark=True)
 	assert station.mode() == 'spark'
 	assert isinstance(station.engine(), SparkContext)
 	assert station.engine().parallelize([1,2,3]).count() == 3
-	station.close()
+	station.stop()
 
 def test_spark_existing():
 	sc = SparkContext()
-	station.setup(sc)
+	station.start(sc)
 	assert station.mode() == 'spark'
 	assert isinstance(station.engine(), SparkContext)
 	assert station.engine().parallelize([1,2,3]).count() == 3
-	station.close()
+	station.stop()
 
 def test_spark_opts():
-	station.setup(spark=True, opts={'master': 'local'})
+	station.start(spark=True, opts={'master': 'local', 'appName': 'hello'})
 	assert station.mode() == 'spark'
 	assert isinstance(station.engine(), SparkContext)
 	assert station.engine().master == 'local'
+	assert station.engine().appName == 'hello'
 	assert station.engine().parallelize([1,2,3]).count() == 3
-	station.close()
+	station.stop()
 
 def test_spark_context():
-	with station.setup(spark=True):
+	with station.start(spark=True):
 		mode = station.mode()
 		n = station.engine().parallelize([1,2,3]).count()
 	assert mode == 'spark'
@@ -43,7 +44,7 @@ def test_spark_context():
 	assert station.mode() == 'local'
 
 def test_spark_close():
-	station.setup(spark=True)
+	station.start(spark=True)
 	assert station.mode() == 'spark'
-	station.close()
+	station.stop()
 	assert station.mode() == 'local'
