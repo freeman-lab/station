@@ -1,5 +1,7 @@
 # station
 
+[![Build Status](https://travis-ci.org/freeman-lab/station.svg?branch=master)](https://travis-ci.org/freeman-lab/station)
+
 Simple context manager to make it easier to write code targeting different computational engines. Currently supports `spark` and `local` modes, support for `dask` and `distributed` coming soon. Credit to Matt Rocklin (@mrocklin) for providing nice examples of custom context managers.
 
 ### install
