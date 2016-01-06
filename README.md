@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/freeman-lab/station.svg?branch=master)](https://travis-ci.org/freeman-lab/station)
 
-Light weight context manager in Python for targeting different computational engines. Makes it easy to write code that targets different engines depending on the setting (e.g. during benchmarking or unit testing). Currently supports `spark` and `local` modes, support for `dask` and `distributed` coming soon. Credit to Matt Rocklin (@mrocklin) for providing nice examples of custom context managers.
+Simple context manager in Python for targeting different computational engines. Makes it easy to write code that targets different engines depending on the setting (e.g. during benchmarking or unit testing). Currently supports `spark` and `local` modes, support for `dask` and `distributed` coming soon. Credit to Matt Rocklin (@mrocklin) for providing nice examples of custom context managers.
 
 ### install
 
