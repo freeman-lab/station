@@ -1,8 +1,11 @@
 # station
 
-[![Build Status](https://travis-ci.org/freeman-lab/station.svg?branch=master)](https://travis-ci.org/freeman-lab/station)
+[![Latest Version](https://img.shields.io/pypi/v/station.svg?style=flat-square)](https://pypi.python.org/pypi/station)
+[![Build Status](https://img.shields.io/travis/freeman-lab/station/master.svg?style=flat-square)](https://travis-ci.org/freeman-lab/station) 
 
-Simple context manager in Python for targeting different computational engines. Makes it easy to write code that targets different engines depending on the setting (e.g. during benchmarking or unit testing). Currently supports `spark` and `local` modes, support for `dask` and `distributed` coming soon. Credit to Matt Rocklin (@mrocklin) for providing nice examples of custom context managers.
+> context manager for computational engines
+
+Simple context manager in Python for targeting different computational engines. Makes it easy to write code that targets different engines depending on the setting (e.g. during benchmarking or unit testing). Currently supports `spark` and `local` modes, support for `dask` and `distributed` coming soon.
 
 ### install
 
@@ -60,3 +63,7 @@ with station.start(spark=True):
   # do more spark stuff
 ```
 any engines created inside a `with` will be shut down upon exit, so results requiring the engine should be collected locally
+
+### thanks
+
+Credit to Matt Rocklin (@mrocklin) for providing nice examples of custom context managers.
