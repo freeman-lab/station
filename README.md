@@ -15,7 +15,7 @@ pip install station
 
 ### initializing
 
-if you have an existing spark context you can use it
+If you have an existing `SparkContext` you can use it
 ```python
 station.start(sc)
 ```
@@ -32,7 +32,7 @@ station.start()
 
 ### methods
 
-once created you can get the context object provided by the backend
+Once created you can get the context object provided by the backend
 ```python
 station.engine()
 >> None | <pyspark.context.SparkContext>
@@ -51,7 +51,7 @@ station.stop()
 
 ### more
 
-you can use in a `with` for tight context control e.g. for unit testing or benchmarking
+You can use in a `with` for tight context control e.g. for unit testing or benchmarking
 ```python
 with station.start(spark=True):
   # do spark stuff
@@ -62,7 +62,7 @@ with station.start():
 with station.start(spark=True):
   # do more spark stuff
 ```
-any engines created inside a `with` will be shut down upon exit, so results requiring the engine should be collected locally
+any engines created inside a `with` will be shut down upon exit, so results requiring the engine should be collected locally prior to exiting the context.
 
 ### thanks
 
