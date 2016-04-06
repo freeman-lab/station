@@ -9,7 +9,7 @@ Simple context manager in Python for targeting different computational engines. 
 
 ### install
 
-```
+```bash
 pip install station
 ```
 
